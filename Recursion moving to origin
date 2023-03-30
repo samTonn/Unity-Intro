@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnitsEngine;
+
+public class mover : MonoBehaviour
+{
+
+    /*[SerializeField]float xValue = -0.01f;
+    [SerializeField]float yValue = 0f;
+    [SerializeField]float zValue = -0.01f;*/
+    [SerializeField]float speed = 10f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //float posX = transform.position.x;
+        //float posZ = transform.position.z;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+
+        /*float changeX = 0f;
+        float changeZ = 0f;
+        changeX = goToZero(posX,changeX);
+        changeZ = goToZero(posZ, changeZ);*/
+
+
+        float xValue = Input.GetAxis("Horizontal")*speed*Time.deltaTime;
+        float zValue = Input.GetAxis("Vertical")*speed*Time.deltaTime;
+
+        transform.Translate(xValue, 0, zValue);
+    }
+
+    /*float goToZero(pos, delta);
+    {
+        if (pos == 0)
+        {
+            return 0;
+        }
+        else if (pos > 0)
+        {
+            return -0.01;
+        }
+        else if (pos < 0)
+        {
+            return 0.01;
+        }
+    }*/
+}
